@@ -1,0 +1,216 @@
+:root {
+    --bg: #f6f7f9;
+    --panel: #ffffff;
+    --ink: #1c2430;
+    --muted: #6b7785;
+    --line: #e2e7ee;
+    --accent: #1f6feb;
+    --ok: #0f7b3e;
+    --bad: #b42318;
+    --code: #f2f4f7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.7 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 14px 28px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: .5px;
+}
+
+header nav { display: flex; gap: 16px; }
+
+header nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header nav a:hover { color: var(--accent); }
+
+main {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 28px 20px 64px;
+}
+
+h1 { font-size: 24px; margin: 8px 0 4px; }
+h2 { font-size: 18px; margin: 28px 0 8px; }
+
+p { margin: 8px 0; }
+
+a { color: var(--accent); }
+
+.muted { color: var(--muted); font-size: 13px; }
+
+.hint {
+    background: #eef4ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 14px 0;
+}
+
+form.card { display: flex; flex-direction: column; gap: 12px; max-width: 420px; }
+
+label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); }
+
+input {
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font: inherit;
+    font-size: 14px;
+    background: #fff;
+    color: var(--ink);
+}
+
+input:focus { outline: 2px solid #cfe0ff; border-color: var(--accent); }
+
+button {
+    align-self: flex-start;
+    padding: 9px 22px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover { background: #1558c0; }
+
+.sql {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    margin: 16px 0;
+    overflow: hidden;
+}
+
+.sql .label {
+    padding: 8px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    background: #fafbfc;
+}
+
+pre {
+    margin: 0;
+    padding: 14px;
+    background: var(--code);
+    font: 13px/1.65 "JetBrains Mono", Consolas, monospace;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.sql pre { background: #fff; }
+
+.sql .err {
+    padding: 10px 14px;
+    background: #fef3f2;
+    color: var(--bad);
+    font: 13px/1.6 Consolas, monospace;
+    border-top: 1px solid #fecdca;
+}
+
+article {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 4px 20px 14px;
+    margin: 14px 0;
+}
+
+article h2 { font-size: 16px; margin: 16px 0 6px; }
+
+pre.content { background: transparent; padding: 0 0 6px; font-size: 14px; }
+
+.ok {
+    background: #ecfdf3;
+    border: 1px solid #a6f4c5;
+    color: var(--ok);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 12px 0;
+}
+
+.bad {
+    background: #fef3f2;
+    border: 1px solid #fecdca;
+    color: var(--bad);
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 12px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 14px;
+    margin: 14px 0;
+}
+
+th, td {
+    text-align: left;
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+}
+
+th { background: #fafbfc; font-weight: 600; font-size: 13px; }
+tr:last-child td { border-bottom: 0; }
+
+td code, p code, li code, .hint code {
+    background: var(--code);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font: 13px Consolas, monospace;
+    color: #0b4fa8;
+    word-break: break-all;
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+
+.grid .card { margin: 0; }
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 24px 0 40px;
+}
