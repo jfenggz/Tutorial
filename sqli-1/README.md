@@ -393,7 +393,7 @@ UPDATE users SET password = 'pwned123' WHERE username = 'hacker' OR 1=1#'
 |---|---|---|
 | 注册 | `INSERT ... VALUES (?, ?, ?)` | 安全，payload 只是数据 |
 | 登录 | `SELECT ... WHERE username = ?` | 安全 |
-| 改密码（取用户ID） | `SELECT username WHERE id = ?` | 安全 |
+| 改密码（取用户ID） | `UPDATE ... WHERE id = ?` | 安全 |
 | 改密码（拼接） | `UPDATE ... WHERE username = '$stored'` | **不安全** |
 
 前三次都没问题，问题在最后一次：变量来自数据库，代码就默认它可信。数据库只是存储，不是消毒柜。
